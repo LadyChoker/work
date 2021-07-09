@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+    <edgeCommon>
+        <!--	防止setTEDB报错		-->
+        <AvailableLabels>
+            <LabelSetField type="4">
+                <numLabels>160</numLabels>
+                <!--<baseLabel grid="1" cs="2" min_frequency="1561.4" ></baseLabel>-->
+                <baseLabel grid="3" cs="5" n="0"></baseLabel>
+            </LabelSetField>
+        </AvailableLabels>
+    </edgeCommon>
+    <!--	domain 1	-->
+    <domain>
+        <layer type="mpls" ></layer>
+
+        <domain_id>0.0.0.1</domain_id>
+        <reachability_entry>
+            <ipv4_address>10.0.1.0</ipv4_address>
+            <prefix>24</prefix>
+        </reachability_entry>
+        <!--    nodes    -->
+        <node>
+            <router_id>10.0.1.1</router_id>
+        </node>
+        <node>
+            <router_id>10.0.1.2</router_id>
+        </node>
+        <node>
+            <router_id>10.0.1.3</router_id>
+        </node>
+        <node>
+            <router_id>10.0.1.4</router_id>
+        </node>
+
+        <node>
+            <router_id>10.0.1.5</router_id>
+        </node>
+        <!--    intradomain edges    -->
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.1</router_id>
+                <if_id>1</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.2</router_id>
+                <if_id>1</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.2</router_id>
+                <if_id>1</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.1</router_id>
+                <if_id>1</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.1</router_id>
+                <if_id>2</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.3</router_id>
+                <if_id>1</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.3</router_id>
+                <if_id>1</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.1</router_id>
+                <if_id>2</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.2</router_id>
+                <if_id>2</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.3</router_id>
+                <if_id>2</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.2</router_id>
+                <if_id>2</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.3</router_id>
+                <if_id>2</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.3</router_id>
+                <if_id>3</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.4</router_id>
+                <if_id>1</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.4</router_id>
+                <if_id>1</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.3</router_id>
+                <if_id>3</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.3</router_id>
+                <if_id>4</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.5</router_id>
+                <if_id>1</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.5</router_id>
+                <if_id>1</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.3</router_id>
+                <if_id>4</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.4</router_id>
+                <if_id>2</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.5</router_id>
+                <if_id>2</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.1.5</router_id>
+                <if_id>2</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.1.4</router_id>
+                <if_id>2</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <!--    interdomain edges    -->
+        <edge type="interdomain">
+            <source>
+                <router_id>10.0.1.1</router_id>
+                <if_id>3</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.1</router_id>
+                <if_id>3</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+
+        <edge type="interdomain">
+            <source>
+                <router_id>10.0.1.1</router_id>
+                <if_id>4</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.2</router_id>
+                <if_id>3</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+
+        <edge type="interdomain">
+            <source>
+                <router_id>10.0.1.4</router_id>
+                <if_id>3</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.1</router_id>
+                <if_id>4</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+
+        <edge type="interdomain">
+            <source>
+                <router_id>10.0.1.4</router_id>
+                <if_id>4</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.2</router_id>
+                <if_id>4</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+
+    </domain>
+    <!--	domain 2	-->
+    <domain>
+        <!--		<layer type="transport" ></layer>-->
+        <layer type="mpls" ></layer>
+
+        <domain_id>0.0.0.2</domain_id>
+        <reachability_entry>
+            <ipv4_address>10.0.2.0</ipv4_address>
+            <prefix>24</prefix>
+        </reachability_entry>
+        <node>
+            <router_id>10.0.2.1</router_id>
+        </node>
+        <node>
+            <router_id>10.0.2.2</router_id>
+        </node>
+        <node>
+            <router_id>10.0.2.3</router_id>
+        </node>
+        <node>
+            <router_id>10.0.2.4</router_id>
+        </node>
+        <node>
+            <router_id>10.0.2.5</router_id>
+        </node>
+
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.1</router_id>
+                <if_id>3</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.2</router_id>
+                <if_id>1</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.2</router_id>
+                <if_id>1</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.1</router_id>
+                <if_id>3</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.1</router_id>
+                <if_id>4</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.3</router_id>
+                <if_id>1</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.3</router_id>
+                <if_id>1</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.1</router_id>
+                <if_id>4</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.2</router_id>
+                <if_id>2</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.3</router_id>
+                <if_id>2</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.3</router_id>
+                <if_id>2</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.2</router_id>
+                <if_id>2</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.3</router_id>
+                <if_id>3</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.4</router_id>
+                <if_id>3</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.4</router_id>
+                <if_id>3</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.3</router_id>
+                <if_id>3</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.3</router_id>
+                <if_id>4</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.5</router_id>
+                <if_id>1</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.5</router_id>
+                <if_id>1</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.3</router_id>
+                <if_id>4</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.4</router_id>
+                <if_id>4</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.5</router_id>
+                <if_id>2</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+        <edge type="intradomain">
+            <source>
+                <router_id>10.0.2.5</router_id>
+                <if_id>2</if_id>
+            </source>
+            <destination>
+                <router_id>10.0.2.4</router_id>
+                <if_id>4</if_id>
+            </destination>
+            <delay>
+                10
+            </delay>
+            <maximum_bandwidth>
+                100
+            </maximum_bandwidth>
+        </edge>
+    </domain>
+</network>

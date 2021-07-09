@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<network>
+
+    <domain>
+        <layer type="mpls" ></layer>
+        <domain_id>0.0.0.1</domain_id>
+        <edgeCommon>
+            <AvailableLabels>
+                <LabelSetField type="4">
+                    <numLabels>160</numLabels>
+                    <!--        n = (min_frequency-1471)/20            -->
+                    <baseLabel grid="0" cs="0" n="0" min_frequency="1500"></baseLabel>
+                </LabelSetField>
+            </AvailableLabels>
+            <AvailableLabels>
+                <LabelSetField type="4">
+                    <numLabels>160</numLabels>
+                    <baseLabel grid="0" cs="0" n="0"></baseLabel>
+                </LabelSetField>
+            </AvailableLabels>
+        </edgeCommon>
+        <reachability_entry>
+            <ipv4_address>10.0.1.0</ipv4_address>
+            <prefix>24</prefix>
+        </reachability_entry>
+        <node>
+            <router_id>10.0.1.1</router_id>
+            <sid>16001</sid>
+        </node>
+        <node>
+            <router_id>10.0.1.2</router_id>
+            <sid>16002</sid>
+        </node>
+        <!--
+            不写type相当于intradomain
+            type=interdomain相当于intradomain
+        -->
+        <edge type='intradomain'>
+            <source>
+                <router_id>10.0.1.1</router_id>
+                <if_id>1</if_id>
+                <!--<NumIf_id>???</NumIf_id>-->
+            </source>
+            <destination>
+                <router_id>10.0.1.2</router_id>
+                <if_id>1</if_id>
+            </destination>
+            <!--edge.setDelay_ms(delay_ms)-->
+            <delay>100</delay>
+            <!--(edge.getTE_info()).setMaximumBandwidth(maximumBandwidth)-->
+            <maximum_bandwidth>100</maximum_bandwidth>
+            <default_te_metric>66</default_te_metric>
+            <unreserved_bandwidth priority="0">99</unreserved_bandwidth>
+            <!--<number_wlans>10</number_wlans>-->
+        </edge>
+    </domain>
+</network>

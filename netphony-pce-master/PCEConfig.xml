@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<PCEServerPort>4189</PCEServerPort>
+	<PCEManagementPort>6666</PCEManagementPort>
+	<LocalPCEAddress>127.0.0.1</LocalPCEAddress>
+	<!--在TCP连接启动后60秒启动这个Timer-->
+	<ConnectTimer>60</ConnectTimer>
+	<!--TCP最多重连次数-->
+	<ConnectMaxRetry>5</ConnectMaxRetry>
+	<!--等待Open message的Timer-->
+	<OpenWait>60</OpenWait>
+	<!--等待Keepalive或者PCErr消息的时间-->
+	<KeepWait>60</KeepWait>
+	<!--有状态-->
+	<isStateful>true</isStateful>
+	<!--PCC调度处理器数量-->
+	<PCCRequestsProcessors>1</PCCRequestsProcessors>
+	<!--多域-->
+	<multidomain>true</multidomain>
+	<!--拓扑-->
+	<networkDescriptionFile>topo.xml</networkDescriptionFile>
+	<initialSessionID>1000</initialSessionID>
+	<nodelay>true</nodelay>
+	<reservation>true</reservation>
+	<optimizedRead>false</optimizedRead>
+	<analyzeRequestTime>true</analyzeRequestTime>
+	<multilayer>false</multilayer>
+	<setTraces>true</setTraces>
+	<layer type="mpls" default="true" ></layer>
+	<algorithmRule of="1002" svec="false" name="sson.AURE_SSON_algorithm" isParentPCEAlgorithm="false" isSSONAlgorithm="true"/>
+	<PCEServerLogFile>PCEServer.log</PCEServerLogFile>
+	<PCEPParserLogFile>PCEPParserServer.log</PCEPParserLogFile>
+	<OSPFParserLogFile>OSPFParser.log</OSPFParserLogFile>
+
+	<!--	<dbName>redis</dbName>-->
+	<!--	<dbType>0</dbType>-->
+	<!--OSPF>
+		<OSPFSession>true</OSPFSession>
+		<OSPFListenerIP>192.168.1.200</OSPFListenerIP>
+		<OSPFMulticast>true</OSPFMulticast>
+		<OSPFUnicast>false</OSPFUnicast>
+		<OSPFTCPSession>false</OSPFTCPSession>
+		<OSPFTCPPort>7762</OSPFTCPPort>
+	</OSPF-->
+	<!--<parentPCE>
+		 <parentPCEAddress>10.95.30.29</parentPCEAddress>
+		 <parentPCEAddress>2.2.2.2</parentPCEAddress>
+		 <parentPCEAddress>10.95.30.29</parentPCEAddress>
+		 <parentPCEAddress>10.95.15.126</parentPCEAddress>
+		 <parentPCEPort>4172</parentPCEPort>
+	</parentPCE>-->
+</config>

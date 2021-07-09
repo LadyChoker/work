@@ -1,0 +1,36 @@
+v1.3.3
+- Topology Module added
+- Topology Module: Export via RESCONF with COP model
+- Topology Module: Export via RESTCONF with IETF model (nodes only)
+- Topology Module: Export via UNIFY model
+- Topology Module: Import via XML
+- Topology Module: Import/Export via BGP-LS
+v1.3.2
+- Supports network-protocols 1.3.2
+- Update to support reading multiple AS_PATH
+- Apache 2.0 license
+- Moved to slf4j logging framework
+- Added method to pass multiple TEDs from en external program
+- Added docker support in travis
+v1.3
+- Compile with networking-protocols v1.3.0 (available in maven central)
+- JUnit Test upgrade to check intraTEDBs after sending
+- Added functionality: read multiple intraTEDBs from xml file
+- Added support to draft-previdi-idr-bgpls-te-metric-extensions-00
+v1.2.2
+- Added travis integration
+- Javadoc errors fixed
+- Ready to meet maven central requirements
+- Compile with networking-protocols v1.2.3 (available in maven central)
+v1.2.1
+- Compile with networking-protocols v1.2.1
+v1.2
+- JUnit Test added
+- Bugfixes
+- Reduced number of logs
+- Updated README with explanation of parameters
+v1.1.1
+- Added configuration instructions of the standalone BGP Peer 
+- Added dependencies to pom.xml
+v1.1.0
+First Public Release

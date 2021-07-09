@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+	<edgeCommon>
+		<!--	防止setTEDB报错		-->
+		<AvailableLabels>
+			<LabelSetField type="4">
+				<numLabels>160</numLabels>
+				<baseLabel grid="3" cs="5" n="0"></baseLabel>
+			</LabelSetField>
+		</AvailableLabels>
+	</edgeCommon>
+	<!--	domain 1	-->
+	<domain>
+		<layer type="mpls" ></layer>
+
+		<domain_id>0.0.0.1</domain_id>
+		<reachability_entry>
+			<ipv4_address>10.0.1.0</ipv4_address>
+			<prefix>24</prefix>
+		</reachability_entry>
+
+		<node>
+			<router_id>10.0.1.1</router_id>
+		</node>
+
+		<edge>
+			<source>
+				<router_id>10.0.1.1</router_id>
+				<if_id>1</if_id>
+			</source>
+			<destination>
+				<router_id>10.0.2.1</router_id>
+				<if_id>1</if_id>
+			</destination>
+			<!--<delay>
+				10
+			</delay>-->
+			<maximum_bandwidth>
+                10
+            </maximum_bandwidth>
+		</edge>
+
+		<edge>
+			<source>
+				<router_id>10.0.1.1</router_id>
+				<if_id>2</if_id>
+			</source>
+			<destination>
+				<router_id>10.0.3.1</router_id>
+				<if_id>1</if_id>
+			</destination>
+			<!--<delay>
+				100
+			</delay>-->
+			<maximum_bandwidth>
+				100
+			</maximum_bandwidth>
+		</edge>
+
+	</domain>
+
+	<!--	domain 2	-->
+	<domain>
+		<layer type="mpls" ></layer>
+
+		<domain_id>0.0.0.2</domain_id>
+		<reachability_entry>
+			<ipv4_address>10.0.2.0</ipv4_address>
+			<prefix>24</prefix>
+		</reachability_entry>
+
+		<node>
+			<router_id>10.0.2.1</router_id>
+		</node>
+		<edge>
+			<source>
+				<router_id>10.0.2.1</router_id>
+				<if_id>1</if_id>
+			</source>
+			<destination>
+				<router_id>10.0.1.1</router_id>
+				<if_id>1</if_id>
+			</destination>
+			<maximum_bandwidth>
+				10
+			</maximum_bandwidth>
+		</edge>
+		<edge>
+			<source>
+				<router_id>10.0.2.1</router_id>
+				<if_id>2</if_id>
+			</source>
+			<destination>
+				<router_id>10.0.3.1</router_id>
+				<if_id>2</if_id>
+			</destination>
+			<maximum_bandwidth>
+				10
+			</maximum_bandwidth>
+		</edge>
+
+	</domain>
+
+	<!--	domain 3	-->
+	<domain>
+		<layer type="mpls" ></layer>
+
+		<domain_id>0.0.0.3</domain_id>
+		<reachability_entry>
+			<ipv4_address>10.0.3.0</ipv4_address>
+			<prefix>24</prefix>
+		</reachability_entry>
+
+		<node>
+			<router_id>10.0.3.1</router_id>
+		</node>
+
+		<edge>
+			<source>
+				<router_id>10.0.3.1</router_id>
+				<if_id>1</if_id>
+			</source>
+			<destination>
+				<router_id>10.0.1.1</router_id>
+				<if_id>2</if_id>
+			</destination>
+			<maximum_bandwidth>
+				100
+			</maximum_bandwidth>
+		</edge>
+		<edge>
+			<source>
+				<router_id>10.0.3.1</router_id>
+				<if_id>2</if_id>
+			</source>
+			<destination>
+				<router_id>10.0.2.1</router_id>
+				<if_id>2</if_id>
+			</destination>
+			<maximum_bandwidth>
+				10
+			</maximum_bandwidth>
+		</edge>
+	</domain>
+</network>

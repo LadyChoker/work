@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/cne-tnetwork" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/netphony-gmpls-emulator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/netphony-topology-master/src/main/jni" vcs="Git" />
+  </component>
+</project>

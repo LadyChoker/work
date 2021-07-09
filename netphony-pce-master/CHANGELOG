@@ -1,0 +1,28 @@
+v1.3.3
+- Added Orchestrator (ack to KTH)
+- update to use network-protocols v1.3.3 and topology 1.3.3
+- Examples added
+v1.3.2
+- Moved to slf4j logging framework
+- Apache 2.0 license
+- Sample Configurationfiles in src/main/sample-config-files/
+- Integration test support with docker
+- Dockerfile available for Domain PCE
+v1.3.0
+- Multicast Raw Socket Support for OSPF-TE
+- Added Travis support
+- Added profiles pom, in order to generate automatic main class for Domain PCE Server and Parent PCE.
+- Added profile pom to include Path Computation Client (QuickClient)
+- Included QuickClient<->PCEServer Parameterized test
+- Separated QuickClient main class to QuickClient obj class, did it to test QuickClient separately
+v1.2
+- Fixed compilation with maven
+- Adapted to work with network protocols 1.2.1 and netphony-topology 1.2.1
+v1.1.0
+- Support for Stateful Active Parent PCE
+- Updated pom.xml with dependencies
+- Updates to be Stateful Parent PCE
+- Support for Data Path IDs
+- TED moved outside PCE to other package & repository
+v1.0.0
+First Release
